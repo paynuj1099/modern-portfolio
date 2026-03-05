@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`bg-[#000000] text-[#f4f4f5] overflow-x-hidden antialiased ${manrope.variable} ${syne.variable}`}>
-      <body className="font-manrope bg-void text-light selection:bg-white selection:text-void">
+      <body className="font-manrope bg-void text-light selection:bg-white selection:text-void overflow-x-hidden">
         {children}
       </body>
     </html>

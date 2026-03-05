@@ -68,9 +68,9 @@ export default function SkillsSection() {
   }, []);
 
   return (
-    <section id="skills" className="w-full px-6 md:px-20 py-16 md:py-32 bg-void">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-20">
-        <h2 className="font-syne text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-none">
+    <section id="skills" className="w-full px-4 sm:px-6 md:px-20 py-16 md:py-32 bg-void overflow-hidden">
+      <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-20">
+        <h2 className="font-syne text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-none">
           Technical
           <br />
           <span className="text-outline">Toolkit</span>

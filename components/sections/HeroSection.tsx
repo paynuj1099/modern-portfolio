@@ -65,7 +65,7 @@ export default function HeroSection() {
             Open for freelance work!
           </span>
         </div>
-        <h1 className="font-syne text-[8vw] leading-none font-extrabold uppercase tracking-tighter mix-blend-difference">
+        <h1 className="font-syne text-[12vw] sm:text-[10vw] md:text-[8vw] leading-none font-extrabold uppercase tracking-tighter mix-blend-difference px-4">
           Rolando
           <br />
           <span className="text-outline">Remolacio</span>
