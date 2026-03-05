@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        syne: ['Syne', 'sans-serif'],
-        manrope: ['Manrope', 'sans-serif'],
+        syne: ['var(--font-syne)', 'sans-serif'],
+        manrope: ['var(--font-manrope)', 'sans-serif'],
       },
       colors: {
         void: '#000000',

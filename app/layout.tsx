@@ -1,5 +1,18 @@
 import type { Metadata } from "next";
+import { Manrope, Syne } from "next/font/google";
 import "./globals.css";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["300", "400", "600"],
+  variable: "--font-manrope",
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["600", "800"],
+  variable: "--font-syne",
+});
 
 export const metadata: Metadata = {
   title: "Rolando Remolacio",
@@ -12,15 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-[#000000] text-[#f4f4f5] overflow-x-hidden antialiased">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Syne:wght@600;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`bg-[#000000] text-[#f4f4f5] overflow-x-hidden antialiased ${manrope.variable} ${syne.variable}`}>
       <body className="font-manrope bg-void text-light selection:bg-white selection:text-void">
         {children}
       </body>

@@ -14,7 +14,7 @@ export default function AboutSection() {
       <div className="md:w-1/2 flex flex-col gap-12 md:gap-20 lg:gap-32 pt-4 md:pt-10">
         <p className="text-lg md:text-3xl lg:text-4xl leading-tight font-light">
           I build at the intersection of <span className="font-syne font-bold">design</span> and{' '}
-          <span className="font-syne font-bold text-outline">logic</span>. My goal isn't just to
+          <span className="font-syne font-bold text-outline">logic</span>. My goal isn&apos;t just to
           write code, but to engineer emotions through seamless interaction.
         </p>
         <p className="text-lg md:text-3xl lg:text-4xl leading-tight font-light">

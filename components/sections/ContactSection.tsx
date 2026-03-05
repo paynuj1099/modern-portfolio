@@ -70,7 +70,7 @@ export default function ContactSection() {
     >
       <div className="w-full max-w-4xl mx-auto">
         <h2 className="font-syne text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-none mb-16 md:mb-20">
-          Let's
+          Let&apos;s
           <br />
           <span className="text-outline">Connect</span>
         </h2>
