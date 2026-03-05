@@ -5,7 +5,7 @@ export default function AboutSection() {
       className="w-full relative px-6 md:px-20 py-16 md:py-32 flex flex-col md:flex-row gap-12 md:gap-20"
     >
       <div className="md:w-1/2 pin-left">
-        <h2 className="font-syne text-5xl md:text-6xl lg:text-7xl font-bold uppercase mb-8">
+        <h2 className="font-syne text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase mb-8">
           The
           <br />
           Mindset

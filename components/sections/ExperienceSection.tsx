@@ -56,7 +56,7 @@ export default function ExperienceSection() {
     >
       <div className="flex flex-col md:flex-row gap-10 md:gap-20">
         <div className="md:w-1/3">
-          <h2 className="font-syne text-5xl md:text-7xl font-bold uppercase sticky top-32">
+          <h2 className="font-syne text-4xl sm:text-5xl md:text-7xl font-bold uppercase sticky top-32">
             The
             <br />
             <span className="text-outline">Journey</span>

@@ -49,7 +49,7 @@ export default function ContactSection() {
       className="min-h-screen flex flex-col items-center justify-center relative px-6 py-16 md:py-32 text-center"
     >
       <div className="w-full max-w-4xl mx-auto">
-        <h2 className="font-syne text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-none mb-16 md:mb-20">
+        <h2 className="font-syne text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-none mb-16 md:mb-20">
           Let&apos;s
           <br />
           <span className="text-outline">Connect</span>
