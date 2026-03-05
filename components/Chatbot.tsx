@@ -63,7 +63,7 @@ export default function Chatbot({ isOpen, onClose }: ChatbotProps) {
 
   return (
     <div
-      className={`fixed bottom-20 right-6 md:bottom-24 md:right-8 w-[90vw] md:w-[400px] h-[500px] bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/20 z-[60] rounded-2xl flex flex-col overflow-hidden shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+      className={`fixed inset-0 md:inset-auto md:bottom-24 md:right-8 w-screen md:w-[400px] h-screen md:h-[500px] bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/20 z-[60] rounded-none md:rounded-2xl flex flex-col overflow-hidden shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         isOpen ? 'translate-y-0' : 'translate-y-[120%]'
       }`}
     >
