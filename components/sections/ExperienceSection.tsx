@@ -73,7 +73,7 @@ export default function ExperienceSection() {
                 <span className="font-mono text-xs text-white/40 mb-2 uppercase tracking-widest">
                   {exp.period}
                 </span>
-                <h3 className="font-syne text-3xl md:text-5xl font-bold uppercase group-hover:text-outline transition-all duration-300">
+                <h3 className="font-syne text-2xl sm:text-3xl md:text-5xl font-bold uppercase group-hover:text-outline transition-all duration-300 break-words">
                   {exp.title}
                 </h3>
                 <p className="text-lg opacity-60 mt-4 max-w-lg">{exp.description}</p>

@@ -102,7 +102,7 @@ export default function ContactSection() {
               className="hover-target group relative overflow-hidden px-12 py-6 border border-white/20 rounded-full transition-all hover:border-white"
               disabled={messageSent}
             >
-              <span className="relative z-10 font-syne text-xl uppercase font-bold group-hover:text-void transition-colors duration-300">
+              <span className="relative z-10 font-syne text-base sm:text-xl uppercase font-bold group-hover:text-void transition-colors duration-300">
                 {messageSent ? 'Message Sent' : 'Send Message'}
               </span>
               <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
@@ -115,7 +115,7 @@ export default function ContactSection() {
             href="https://rolandoremolacio.com" 
             target="_blank"
             rel="noopener noreferrer"
-            className="hover-target font-syne text-base sm:text-xl md:text-3xl lg:text-4xl font-bold uppercase hover:text-outline transition-all break-all"
+            className="hover-target font-syne text-sm sm:text-base md:text-xl lg:text-3xl font-bold uppercase hover:text-outline transition-all break-all max-w-full overflow-auto"
           >
             rolandoremolacio.com
           </a>
