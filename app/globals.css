@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base & Resets */
+body {
+  margin: 0;
+}
+
+/* Loader Styles */
+#loader-name {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Custom Cursor - Desktop Only */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  .cursor-dot,
+  .cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 10000;
+    pointer-events: none;
+  }
+  .cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+  }
+  .cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+  }
+  .cursor-outline.hover-active {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    mix-blend-mode: difference;
+    border: none;
+  }
+}
+
+@media (hover: none) {
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+}
+
+/* Film Grain Overlay */
+.noise-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.04;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png');
+  animation: noise 0.2s infinite;
+}
+
+@keyframes noise {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    transform: translate(5%, -10%);
+  }
+  40% {
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    transform: translate(15%, 0);
+  }
+  70% {
+    transform: translate(0, 15%);
+  }
+  80% {
+    transform: translate(3%, 35%);
+  }
+  90% {
+    transform: translate(-10%, 10%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Outline Text Utility */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(244, 244, 245, 0.3);
+}
+
+.text-outline:hover {
+  color: #f4f4f5;
+  -webkit-text-stroke: 0px;
+  transition: all 0.3s ease;
+}
+
+/* Horizontal Scroll Wrapper */
+.horizontal-wrap {
+  width: 400vw;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* Tablet: Adjust sizes */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .horizontal-wrap {
+    width: 350vw;
+    padding: 3rem !important;
+  }
+  #work {
+    height: 80vh !important;
+  }
+  .tablet-work-title {
+    width: 35vw !important;
+    padding-right: 2rem !important;
+  }
+  .tablet-work-card {
+    width: 70vw !important;
+    height: 55vh !important;
+  }
+
+  /* Skills start collapsed on tablet, tap to expand */
+  .skill-item > div:last-child {
+    max-height: 0 !important;
+    cursor: pointer;
+  }
+  .skill-item {
+    cursor: pointer;
+  }
+}
+
+/* Mobile: Stack vertically */
+@media (max-width: 768px) {
+  .horizontal-wrap {
+    width: 100% !important;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem !important;
+  }
+  #work {
+    height: auto !important;
+    padding: 4rem 0;
+  }
+  .mobile-work-title {
+    width: 100% !important;
+    padding: 0 !important;
+    margin-bottom: 2rem;
+  }
+  .mobile-work-card {
+    width: 100% !important;
+    height: 50vh !important;
+  }
+}
+
+/* Hide Scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Chat FAB mobile size */
+@media (max-width: 768px) {
+  .chat-fab {
+    padding: 0.625rem !important;
+  }
+  .chat-fab-icon {
+    width: 22px !important;
+    height: 22px !important;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+/* Grainy overlay for hero section */
+.hero-noise-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.1;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png');
+  animation: noise 0.2s infinite;
+}
