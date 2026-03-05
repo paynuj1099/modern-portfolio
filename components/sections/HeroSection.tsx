@@ -55,6 +55,7 @@ export default function HeroSection() {
       className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-black"
     >
       <div className="absolute inset-0 hero-noise-bg" aria-hidden="true"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-b from-transparent to-black pointer-events-none z-20"></div>
       <div className="text-center z-10 hero-text-wrapper">
         <div className="flex items-center justify-center mb-6">
           <span
