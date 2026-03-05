@@ -79,9 +79,9 @@ export default function WorkSection() {
       id="work"
       className="overflow-hidden bg-void relative h-screen flex items-center"
     >
-      <div className="horizontal-wrap px-4 sm:px-6 md:px-20 gap-8 sm:gap-12 md:gap-20 items-center">
-        <div className="w-full md:w-[50vw] flex-shrink-0 md:pr-20 mobile-work-title tablet-work-title">
-          <h2 className="font-syne text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-8xl font-bold uppercase leading-none">
+      <div className="horizontal-wrap px-20 gap-20 items-center">
+        <div className="w-[50vw] flex-shrink-0 pr-20 mobile-work-title tablet-work-title">
+          <h2 className="font-syne text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold uppercase leading-none">
             Selected
             <br />
             <span className="text-outline">Works</span>

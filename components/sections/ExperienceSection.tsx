@@ -52,11 +52,11 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="w-full px-4 sm:px-6 md:px-20 py-16 md:py-32 bg-void border-t border-white/5 overflow-hidden"
+      className="w-full px-6 md:px-20 py-32 bg-void border-t border-white/5"
     >
       <div className="flex flex-col md:flex-row gap-10 md:gap-20">
         <div className="md:w-1/3">
-          <h2 className="font-syne text-4xl sm:text-5xl md:text-7xl font-bold uppercase sticky top-32">
+          <h2 className="font-syne text-5xl md:text-7xl font-bold uppercase sticky top-32">
             The
             <br />
             <span className="text-outline">Journey</span>
