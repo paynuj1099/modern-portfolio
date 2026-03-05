@@ -70,7 +70,7 @@ export default function SkillsSection() {
   return (
     <section id="skills" className="w-full px-6 md:px-20 py-16 md:py-32 bg-void">
       <div className="flex flex-col md:flex-row justify-between items-end mb-20">
-        <h2 className="font-syne text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-none">
+        <h2 className="font-syne text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-none break-words">
           Technical
           <br />
           <span className="text-outline">Toolkit</span>

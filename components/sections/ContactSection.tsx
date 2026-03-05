@@ -1,18 +1,14 @@
 'use client';
 
-import { useEffect, useRef, FormEvent } from 'react';
+import { useEffect, useState, FormEvent } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { generateClickSound, playGeneratedSound } from '@/utils/soundGenerator';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ContactSection() {
-  const clickSoundRef = useRef<AudioBuffer | null>(null);
-  
+  const [messageSent, setMessageSent] = useState(false);
   useEffect(() => {
-    // Generate click sound
-    clickSoundRef.current = generateClickSound();
     
     const textarea = document.querySelector('textarea');
     if (textarea) {
@@ -35,32 +31,16 @@ export default function ContactSection() {
       stagger: 0.15,
       ease: 'power3.out',
     });
-    
-    // Add click sound to all links and buttons
-    const clickables = document.querySelectorAll('#contact a, #contact button');
-    clickables.forEach((el) => {
-      el.addEventListener('click', () => {
-        if (clickSoundRef.current) {
-          playGeneratedSound(clickSoundRef.current, 0.3);
-        }
-      });
-    });
   }, []);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // Play sound
-    if (clickSoundRef.current) {
-      playGeneratedSound(clickSoundRef.current, 0.4);
-    }
-    
+    setMessageSent(true);
     const btn = e.currentTarget.querySelector('button');
     if (btn) {
-      btn.innerHTML =
-        '<span class="relative z-10 font-syne text-xl uppercase font-bold text-void">Message Sent</span>';
       gsap.to(btn, { scale: 1.05, duration: 0.2, yoyo: true, repeat: 1 });
     }
+    setTimeout(() => setMessageSent(false), 2000);
   };
 
   return (
@@ -89,7 +69,7 @@ export default function ContactSection() {
               id="name"
               name="name"
               placeholder="JOHN DOE"
-              className="bg-transparent w-full font-syne text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl uppercase outline-none placeholder:opacity-40 focus:placeholder:opacity-0 transition-all text-light"
+              className="bg-transparent w-full font-syne text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl uppercase outline-none placeholder:opacity-40 focus:placeholder:opacity-0 transition-all text-light"
             />
           </div>
           <div className="relative border-b border-white/20 pb-4 focus-within:border-white transition-colors">
@@ -101,7 +81,7 @@ export default function ContactSection() {
               id="email"
               name="email"
               placeholder="HELLO@DOMAIN.COM"
-              className="bg-transparent w-full font-syne text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl uppercase outline-none placeholder:opacity-40 focus:placeholder:opacity-0 transition-all text-light"
+              className="bg-transparent w-full font-syne text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl uppercase outline-none placeholder:opacity-40 focus:placeholder:opacity-0 transition-all text-light"
             />
           </div>
           <div className="relative border-b border-white/20 pb-4 focus-within:border-white transition-colors md:col-span-2">
@@ -113,16 +93,17 @@ export default function ContactSection() {
               name="message"
               rows={1}
               placeholder="TELL ME ABOUT THE PROJECT"
-              className="bg-transparent w-full font-syne text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl uppercase outline-none placeholder:opacity-40 focus:placeholder:opacity-0 transition-all resize-none text-light"
+              className="bg-transparent w-full font-syne text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl uppercase outline-none placeholder:opacity-40 focus:placeholder:opacity-0 transition-all resize-none text-light"
             ></textarea>
           </div>
           <div className="md:col-span-2 flex justify-center mt-8">
             <button
               type="submit"
               className="hover-target group relative overflow-hidden px-12 py-6 border border-white/20 rounded-full transition-all hover:border-white"
+              disabled={messageSent}
             >
               <span className="relative z-10 font-syne text-xl uppercase font-bold group-hover:text-void transition-colors duration-300">
-                Send Message
+                {messageSent ? 'Message Sent' : 'Send Message'}
               </span>
               <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
             </button>
@@ -134,7 +115,7 @@ export default function ContactSection() {
             href="https://rolandoremolacio.com" 
             target="_blank"
             rel="noopener noreferrer"
-            className="hover-target font-syne text-xl md:text-3xl lg:text-4xl font-bold uppercase hover:text-outline transition-all"
+            className="hover-target font-syne text-base sm:text-xl md:text-3xl lg:text-4xl font-bold uppercase hover:text-outline transition-all break-all"
           >
             rolandoremolacio.com
           </a>

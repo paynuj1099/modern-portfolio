@@ -1,10 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-import { generateHoverSound, playGeneratedSound } from '@/utils/soundGenerator';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,12 +32,7 @@ const projects = [
 ];
 
 export default function WorkSection() {
-  const hoverSoundRef = useRef<AudioBuffer | null>(null);
-  
   useEffect(() => {
-    // Generate hover sound
-    hoverSoundRef.current = generateHoverSound();
-    
     const horizontalWrap = document.querySelector('.horizontal-wrap') as HTMLElement;
     if (!horizontalWrap || window.innerWidth <= 768) return;
 
@@ -53,16 +47,6 @@ export default function WorkSection() {
         scrub: 1,
         invalidateOnRefresh: true,
       },
-    });
-    
-    // Add hover sound to project cards
-    const projectCards = document.querySelectorAll('.work-card-hover');
-    projectCards.forEach((card) => {
-      card.addEventListener('mouseenter', () => {
-        if (hoverSoundRef.current) {
-          playGeneratedSound(hoverSoundRef.current, 0.25);
-        }
-      });
     });
 
     return () => {
