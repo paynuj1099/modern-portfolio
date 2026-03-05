@@ -1,24 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { gsap } from 'gsap';
-import { generateWhooshSound, playGeneratedSound } from '@/utils/soundGenerator';
 
 export default function Loader() {
-  const whooshSoundRef = useRef<HTMLAudioElement | null>(null);
-  const generatedSoundRef = useRef<AudioBuffer | null>(null);
-  const useGeneratedSound = useRef(false);
-  
   useEffect(() => {
-    // Initialize sound effect
-    whooshSoundRef.current = new Audio('/sounds/whoosh.mp3');
-    whooshSoundRef.current.volume = 0.4;
-    
-    // Handle audio load error - use generated sound as fallback
-    whooshSoundRef.current.addEventListener('error', () => {
-      useGeneratedSound.current = true;
-      generatedSoundRef.current = generateWhooshSound();
-    });
     
     const loaderBar = document.getElementById('loader-bar') as HTMLElement;
     const loaderPerc = document.getElementById('loader-perc') as HTMLElement;
@@ -92,20 +78,6 @@ export default function Loader() {
         yPercent: -100,
         duration: 1.2,
         ease: 'expo.inOut',
-        onStart: () => {
-          // Play whoosh sound when loader slides up
-          if (useGeneratedSound.current && generatedSoundRef.current) {
-            playGeneratedSound(generatedSoundRef.current, 0.4);
-          } else if (whooshSoundRef.current) {
-            whooshSoundRef.current.play().catch(() => {
-              // If audio file fails, use generated sound
-              if (!generatedSoundRef.current) {
-                generatedSoundRef.current = generateWhooshSound();
-              }
-              playGeneratedSound(generatedSoundRef.current, 0.4);
-            });
-          }
-        },
         onComplete: () => {
           window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
           if (window.location.hash && window.location.hash !== '#home') {
